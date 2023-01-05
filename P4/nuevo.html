@@ -1,27 +1,21 @@
 <canvas width="600" height="400"> </canvas>
 <script>
-    var pantalla = document.querySelector("canvas");
-    var pincel = pantalla.getContext("2d")
-  
-    pincel.fillStyle = "green"; 
-    pincel.fillRect (0, 0, 50, 50);
-    pincel.strokeStyle = "black";
-    pincel.strokeRect (0, 0, 50, 50)
+    function dubujarCuadradoVerde(x){
 
-    pincel.fillStyle = "blue"; 
-    pincel.fillRect (50, 0, 50, 50);
-    pincel.strokeRect (50, 0, 50, 50)
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d")
+    
+        pincel.fillStyle = "green"; 
+        pincel.fillRect (x, 0, 50, 50);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect (x, 0, 50, 50)
 
-    pincel.fillStyle = "green"; 
-    pincel.fillRect (100, 0, 50, 50);
-    pincel.strokeRect (100, 0, 50, 50)
+    }
 
-    pincel.fillStyle = "blue"; 
-    pincel.fillRect (150, 0, 50, 50);
-    pincel.strokeRect (150, 0, 50, 50)
+    dubujarCuadradoVerde(0);
+    dubujarCuadradoVerde(50);
+    dubujarCuadradoVerde(100);
+    dubujarCuadradoVerde(150);
 
-    pincel.fillStyle = "green"; 
-    pincel.fillRect (200, 0, 50, 50);
-    pincel.strokeRect (200, 0, 50, 50)
 
 </script>
