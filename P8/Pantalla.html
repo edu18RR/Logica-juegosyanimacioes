@@ -4,15 +4,14 @@
     var pantalla = document.querySelector("canvas");
     var pincel = pantalla.getContext("2d");
         
-    var pantalla = document.querySelector("canvas");
-    var pincel = pantalla.getContext("2d");
-
-    pincel.fillStyle = 'grey';
+    pincel.fillStyle = "grey";
     pincel.fillRect(0, 0, 600 ,400);
 
-    function exhibir(){
+    function exhibirAlerta(evento){
+        console.log(evento);
         alert("Usted hizo un click")
     }
     
+    pantalla.onclick = exhibirAlerta;
 
 </script>
