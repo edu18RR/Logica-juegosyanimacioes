@@ -14,6 +14,20 @@
         alert(x + "," + y);
     }
     
-    pantalla.onclick = exhibirAlerta;
+    function dibujarCirculo(evento){
+        var x = evento.pageX - pantalla.offsetLeft; //pos x resta
+        var y = evento.pageY - pantalla.offsetTop; //pos y con resta
+        
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.1416)
+        pincel.fill();
+            //Graqficando el circulo azul
+        console.log(x + "," + y);
+    }
+
+    //pantalla.onclick = exhibirAlerta;
+    pantalla.onclick = dibujarCirculo;
+
 
 </script>
