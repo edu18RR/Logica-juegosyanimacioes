@@ -26,8 +26,16 @@
        x++; //Cración de contador
     }
     
-    disenarCircunferencia(100,100,radio +20,"red");
-    disenarCircunferencia(100,100,radio + 10, "white");
-    disenarCircunferencia(100,100,radio,"red");
+    function disenarObject (x,y){ //Definir X y Y (Para aleatorio)
+        disenarCircunferencia(x,y,radio +20,"red");
+        disenarCircunferencia(x,y,radio + 10, "white");
+        disenarCircunferencia(x,y,radio,"red");
+
+    }
+
+    xAleatorio = 50;
+    yAleatorio = 100;
+
+    disenarObject(xAleatorio, yAleatorio);
 
 </script>
