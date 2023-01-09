@@ -33,8 +33,12 @@
 
     }
 
-    xAleatorio = 50;
-    yAleatorio = 100;
+    function SorteoPosicion(maximo){
+        return Math.floor(Math.random()*maximo); //redondear hacia a abajo
+    }
+
+    xAleatorio = SorteoPosicion (600);
+    yAleatorio = SorteoPosicion(400);
 
     disenarObject(xAleatorio, yAleatorio);
 
