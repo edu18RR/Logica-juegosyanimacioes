@@ -15,14 +15,16 @@
     }
 
     function limpiarPantalla (){
-        pincel.clearRect(0,0,600,400);
+        pincel.clearRect(0,0,600,400); //Limpia
+    }
+    var x = 0
+    
+    function actulizarPantalla (){
+       limpiarPantalla();
+       disenarCircunferencia(x,20,10); //llama a circuferencia
+       x++; //Cración de contador
     }
     
-    function exhibidoMensaje(){
-        console.log("Mostrar mensaje")
-    }
-    setInterval(exhibidoMensaje,1000); //llamar a la función por tiempo
-    
-//graficar en  pausa 
+    setInterval (actulizarPantalla,500);
 
 </script>
