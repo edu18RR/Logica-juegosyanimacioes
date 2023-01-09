@@ -7,8 +7,12 @@
     pincel.fillStyle = "grey";
     pincel.fillRect(0,0,600,400);
 
-    disenarCircunferencia(x,y,radio){
-        pincel.fillStyle="blue";
-        pincel.beginPath();
+    disenarCircunferencia(x,y,radio){  //definir variables
+        pincel.fillStyle="blue"; // El color
+        pincel.beginPath(); // Seleción del camino
+        pincel.arc (x,y,radio,0,2*Math.PI);//Definir la circunferencia
+        pincel.fill(); //llenado de circunferencia
     }
+
+    disenarCircunferencia(20,20,10) //iniciar posición de los parametros 
 </script>
