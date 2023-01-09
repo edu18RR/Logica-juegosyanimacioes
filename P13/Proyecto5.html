@@ -1,0 +1,33 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");   
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0,0,600,400);
+    var radio = 10; 
+
+    
+    function disenarCircunferencia(x,y,radio,color){  //definir variables
+        pincel.fillStyle = color; // El color
+        pincel.beginPath(); // Seleción del camino
+        pincel.arc (x,y,radio,0,2*Math.PI);//Definir la circunferencia
+        pincel.fill(); //llenado de circunferencia
+    }
+
+    function limpiarPantalla (){
+        pincel.clearRect(0,0,600,400); //Limpia
+    }
+    var x = 0
+    
+    function actulizarPantalla (){
+       limpiarPantalla();
+       disenarCircunferencia(x,20,10); //llama a circuferencia
+       x++; //Cración de contador
+    }
+    
+    disenarCircunferencia(100,100,radio +20,"red");
+    disenarCircunferencia(100,100,radio + 10, "white");
+    disenarCircunferencia(100,100,radio,"red");
+
+</script>
