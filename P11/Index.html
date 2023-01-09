@@ -14,11 +14,15 @@
         pincel.fill(); //llenado de circunferencia
     }
 
-    for(var x = 20; x < 600; x++){
-        
-        disenarCircunferencia(x,20,10); //iniciar posición de los parametros 
-
+    function limpiarPantalla (){
+        pincel.clearRect(0,0,600,400);
     }
-
+    
+    function exhibidoMensaje(){
+        console.log("Mostrar mensaje")
+    }
+    setInterval(exhibidoMensaje,1000); //llamar a la función por tiempo
+    
+//graficar en  pausa 
 
 </script>
