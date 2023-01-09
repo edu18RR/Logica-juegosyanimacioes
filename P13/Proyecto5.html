@@ -6,7 +6,8 @@
     pincel.fillStyle = "lightgrey";
     pincel.fillRect(0,0,600,400);
     var radio = 10; 
-
+    var xAleatorio
+    var yAleatorio //entorno exterior
     
     function disenarCircunferencia(x,y,radio,color){  //definir variables
         pincel.fillStyle = color; // El color
@@ -20,12 +21,6 @@
     }
     var x = 0
     
-    function actulizarPantalla (){
-       limpiarPantalla();
-       disenarCircunferencia(x,20,10); //llama a circuferencia
-       x++; //Cración de contador
-    }
-    
     function disenarObject (x,y){ //Definir X y Y (Para aleatorio)
         disenarCircunferencia(x,y,radio +20,"red");
         disenarCircunferencia(x,y,radio + 10, "white");
@@ -37,9 +32,29 @@
         return Math.floor(Math.random()*maximo); //redondear hacia a abajo
     }
 
-    xAleatorio = SorteoPosicion (600);
-    yAleatorio = SorteoPosicion(400);
+    function actulizarPantalla (){
+       limpiarPantalla();
+       xAleatorio = SorteoPosicion (600);
+       yAleatorio = SorteoPosicion(400);
+       disenarObject(xAleatorio, yAleatorio);
+       x++; //Cración de contador
+    }
+       
+    setInterval(actulizarPantalla,1500);
 
-    disenarObject(xAleatorio, yAleatorio);
+    function disparar(evento){
+        
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        
+        if ((x < xAleatorio + radio) &&
+            (x > xAleatorio - radio) &&
+            (y < yAleatorio + radio) &&
+            (y > yAleatorio - radio)) {
+            alert("Acertaste");
+        }    
+    }
+    
+    pantalla.onclick = disparar;
 
 </script>
